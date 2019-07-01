@@ -1,6 +1,4 @@
-using System;
-
-namespace RequestBusPoc.Web.Models
+namespace RequestBusPoc.Web.ViewModels
 {
     public class ErrorViewModel
     {
