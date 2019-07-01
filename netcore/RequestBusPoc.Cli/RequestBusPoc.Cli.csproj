@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RequestBusPoc.Cli.UI\RequestBusPoc.Cli.UI.csproj" />
+    <ProjectReference Include="..\RequestBusPoc.Data.InMemory\RequestBusPoc.Data.InMemory.csproj" />
+  </ItemGroup>
+
+</Project>
