@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RequestBusPoc.Application\RequestBusPoc.Application.csproj" />
+    <ProjectReference Include="..\RequestBusPoc.Data.InMemory\RequestBusPoc.Data.InMemory.csproj" />
   </ItemGroup>
 
 </Project>
