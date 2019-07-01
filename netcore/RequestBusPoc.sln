@@ -5,13 +5,19 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestBusPoc.Domain", "RequestBusPoc.Domain\RequestBusPoc.Domain.csproj", "{4E861372-D9C2-424E-A788-F3F3C01F82F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestBusPoc.Application", "RequestBusPoc.Application\RequestBusPoc.Application.csproj", "{AA08BD69-937D-4CDC-A642-5EBDBEDC6903}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestBusPoc.Application", "RequestBusPoc.Application\RequestBusPoc.Application.csproj", "{AA08BD69-937D-4CDC-A642-5EBDBEDC6903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestBusPoc.Cli.UI", "RequestBusPoc.Cli.UI\RequestBusPoc.Cli.UI.csproj", "{B1336EE5-ED3D-4404-A140-1C76E5F5D45F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestBusPoc.Cli.UI", "RequestBusPoc.Cli.UI\RequestBusPoc.Cli.UI.csproj", "{B1336EE5-ED3D-4404-A140-1C76E5F5D45F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestBusPoc.Data.InMemory", "RequestBusPoc.Data.InMemory\RequestBusPoc.Data.InMemory.csproj", "{398D2E4F-6C1D-46F5-94AA-F50C70B23CAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestBusPoc.Data.InMemory", "RequestBusPoc.Data.InMemory\RequestBusPoc.Data.InMemory.csproj", "{398D2E4F-6C1D-46F5-94AA-F50C70B23CAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestBusPoc.Cli", "RequestBusPoc.Cli\RequestBusPoc.Cli.csproj", "{675F49BB-CBC4-4747-8410-90A2F005BE04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestBusPoc.Cli", "RequestBusPoc.Cli\RequestBusPoc.Cli.csproj", "{675F49BB-CBC4-4747-8410-90A2F005BE04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{2A431D2E-6777-4799-B53A-E8DF5B3D5046}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{91226578-38ED-4A1A-87A0-0133EF2DC3B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{DEA6573E-B7AF-4A97-ABCD-B3CB8F8A8C64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +48,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E861372-D9C2-424E-A788-F3F3C01F82F8} = {91226578-38ED-4A1A-87A0-0133EF2DC3B8}
+		{AA08BD69-937D-4CDC-A642-5EBDBEDC6903} = {91226578-38ED-4A1A-87A0-0133EF2DC3B8}
+		{B1336EE5-ED3D-4404-A140-1C76E5F5D45F} = {2A431D2E-6777-4799-B53A-E8DF5B3D5046}
+		{398D2E4F-6C1D-46F5-94AA-F50C70B23CAB} = {DEA6573E-B7AF-4A97-ABCD-B3CB8F8A8C64}
+		{675F49BB-CBC4-4747-8410-90A2F005BE04} = {2A431D2E-6777-4799-B53A-E8DF5B3D5046}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {543DCD04-43A7-4E6C-AF04-C0B77B16C506}
