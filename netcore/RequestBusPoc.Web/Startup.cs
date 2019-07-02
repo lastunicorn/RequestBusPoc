@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Autofac;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,14 +35,15 @@ namespace RequestBusPoc.Web
 
             services.AddScoped<RequestBus>();
             services.AddScoped<IBookmarkRepository, BookmarkRepository>();
-            services.AddScoped<IRequestHandlerFactory, AspNetCoreRequestHandlerFactory>();
+            services.AddScoped<IRequestHandlerFactory, AutofacRequestHandlerFactory>();
         }
 
-        //public void ConfigureContainer(ContainerBuilder builder)
-        //{
-        //    AnyConcreteTypeNotAlreadyRegisteredSource registeredSource = new AnyConcreteTypeNotAlreadyRegisteredSource(x => !(x.IsGenericType && x.GetGenericTypeDefinition() == typeof(Meta<>)));
-        //    builder.RegisterSource(registeredSource);
-        //}
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            ConcreteRegistrationSource registrationSource = new ConcreteRegistrationSource();
+            registrationSource.AllowedNamespaces.Add("RequestBusPoc.Application");
+            builder.RegisterSource(registrationSource);
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

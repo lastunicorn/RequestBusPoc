@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace RequestBusPoc.Domain.RequestBusModel
+﻿namespace RequestBusPoc.Domain.RequestBusModel
 {
     public interface IRequestBus
     {
