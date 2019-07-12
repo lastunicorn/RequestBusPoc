@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using RequestBusPoc.Domain.RequestBusModel;
 
-namespace RequestBusPoc.RestService
+namespace RequestBusPoc.RestService.Bootstrap
 {
     public class AutofacRequestHandlerFactory : IRequestHandlerFactory
     {

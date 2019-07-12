@@ -3,7 +3,7 @@ using RequestBusPoc.Data.InMemory;
 using RequestBusPoc.Domain;
 using RequestBusPoc.Domain.RequestBusModel;
 
-namespace RequestBusPoc.Presentation
+namespace RequestBusPoc.Cli.Bootstrap
 {
     internal class Setup
     {

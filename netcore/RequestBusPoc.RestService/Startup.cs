@@ -10,7 +10,7 @@ using RequestBusPoc.Data.SqlServerDal;
 using RequestBusPoc.Domain;
 using RequestBusPoc.Domain.RequestBusModel;
 
-namespace RequestBusPoc.RestService
+namespace RequestBusPoc.RestService.Bootstrap
 {
     public class Startup
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace RequestBusPoc.RestService
+namespace RequestBusPoc.RestService.Bootstrap
 {
     public class Program
     {

@@ -8,7 +8,7 @@ using Autofac.Core.Activators.Delegate;
 using Autofac.Core.Lifetime;
 using Autofac.Core.Registration;
 
-namespace RequestBusPoc.RestService
+namespace RequestBusPoc.RestService.Bootstrap
 {
     public class ConcreteRegistrationSource : IRegistrationSource
     {

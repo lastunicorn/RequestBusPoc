@@ -2,7 +2,7 @@
 using Ninject;
 using RequestBusPoc.Domain.RequestBusModel;
 
-namespace RequestBusPoc.Presentation
+namespace RequestBusPoc.Cli.Bootstrap
 {
     internal class NinjectRequestHandlerFactory : IRequestHandlerFactory
     {

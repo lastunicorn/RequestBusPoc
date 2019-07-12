@@ -1,9 +1,8 @@
 ﻿using System;
 using Ninject;
-using RequestBusPoc.Presentation;
 using RequestBusPoc.Cli.UI.Controllers;
 
-namespace RequestBusPoc.Cli
+namespace RequestBusPoc.Cli.Bootstrap
 {
     internal class Program
     {
