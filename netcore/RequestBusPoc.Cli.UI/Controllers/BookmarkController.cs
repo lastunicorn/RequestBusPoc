@@ -11,9 +11,9 @@ namespace RequestBusPoc.Cli.UI.Controllers
 {
     public class BookmarkController
     {
-        private readonly RequestBus requestBus;
+        private readonly ApplicationRequestBus requestBus;
 
-        public BookmarkController(RequestBus requestBus)
+        public BookmarkController(ApplicationRequestBus requestBus)
         {
             this.requestBus = requestBus ?? throw new ArgumentNullException(nameof(requestBus));
         }

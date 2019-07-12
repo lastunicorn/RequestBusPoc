@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace RequestBusPoc.Domain.RequestBusModel
 {
-    public class RequestBusBase : IRequestBus
+    public class RequestBus : IRequestBus
     {
         private readonly IRequestHandlerFactory requestHandlerFactory;
         private readonly Dictionary<Type, Type> handlers = new Dictionary<Type, Type>();
 
-        public RequestBusBase()
+        public RequestBus()
         {
             requestHandlerFactory = new RequestHandlerFactory();
         }
 
-        public RequestBusBase(IRequestHandlerFactory requestHandlerFactory)
+        public RequestBus(IRequestHandlerFactory requestHandlerFactory)
         {
             this.requestHandlerFactory = requestHandlerFactory ?? throw new ArgumentNullException(nameof(requestHandlerFactory));
         }

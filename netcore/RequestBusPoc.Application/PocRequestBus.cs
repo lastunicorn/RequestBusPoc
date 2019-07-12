@@ -4,9 +4,9 @@ using RequestBusPoc.Domain.RequestBusModel;
 
 namespace RequestBusPoc.Application
 {
-    public class RequestBus : RequestBusBase
+    public class ApplicationRequestBus : RequestBus
     {
-        public RequestBus(IRequestHandlerFactory handlerFactory)
+        public ApplicationRequestBus(IRequestHandlerFactory handlerFactory)
             :base(handlerFactory)
         {
             Register<CreateBookmarkRequest, CreateBookmarkRequestHandler>();

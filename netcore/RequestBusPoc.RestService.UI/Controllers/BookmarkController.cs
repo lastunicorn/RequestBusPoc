@@ -12,9 +12,9 @@ namespace RequestBusPoc.RestService.UI.Controllers
     [ApiController]
     public class BookmarkController : ControllerBase
     {
-        private readonly RequestBus requestBus;
+        private readonly ApplicationRequestBus requestBus;
 
-        public BookmarkController(RequestBus requestBus)
+        public BookmarkController(ApplicationRequestBus requestBus)
         {
             this.requestBus = requestBus ?? throw new ArgumentNullException(nameof(requestBus));
         }

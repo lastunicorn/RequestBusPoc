@@ -33,7 +33,7 @@ namespace RequestBusPoc.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddScoped<RequestBus>();
+            services.AddScoped<ApplicationRequestBus>();
             services.AddScoped<IBookmarkRepository, BookmarkRepository>();
             services.AddScoped<IRequestHandlerFactory, AutofacRequestHandlerFactory>();
         }
