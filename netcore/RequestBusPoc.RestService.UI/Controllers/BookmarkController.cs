@@ -6,7 +6,7 @@ using RequestBusPoc.Application.CreateBookmark;
 using RequestBusPoc.Application.GetAllBookmarks;
 using RequestBusPoc.Domain;
 
-namespace RequestBusPoc.RestService.Controllers
+namespace RequestBusPoc.RestService.UI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RequestBusPoc.RestService.Controllers
+namespace RequestBusPoc.RestService.UI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
