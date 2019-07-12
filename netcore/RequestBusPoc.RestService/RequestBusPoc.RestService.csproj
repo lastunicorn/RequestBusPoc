@@ -15,6 +15,11 @@
   <ItemGroup>
     <ProjectReference Include="..\RequestBusPoc.Application\RequestBusPoc.Application.csproj" />
     <ProjectReference Include="..\RequestBusPoc.Data.InMemory\RequestBusPoc.Data.InMemory.csproj" />
+    <ProjectReference Include="..\RequestBusPoc.Data.SqlServerDal\RequestBusPoc.Data.SqlServerDal.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

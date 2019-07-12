@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using RequestBusPoc.Application;
+using RequestBusPoc.Application.CreateBookmark;
 using RequestBusPoc.Application.GetAllBookmarks;
 using RequestBusPoc.Domain;
-using RequestBusPoc.RestService.Models;
 
 namespace RequestBusPoc.RestService.Controllers
 {
@@ -25,8 +25,19 @@ namespace RequestBusPoc.RestService.Controllers
             GetAllBookmarksRequest request = new GetAllBookmarksRequest();
             List<Bookmark> bookmarks = requestBus.ProcessRequest<GetAllBookmarksRequest, List<Bookmark>>(request);
 
-            BookmarksViewModel viewModel = new BookmarksViewModel(bookmarks);
-            return new JsonResult(viewModel);
+            return new JsonResult(bookmarks);
+        }
+
+        [HttpPost]
+        public ActionResult Post([FromBody] Bookmark bookmark)
+        {
+            CreateBookmarkRequest request = new CreateBookmarkRequest
+            {
+                FeatureId = bookmark.Url
+            };
+            requestBus.ProcessRequest<CreateBookmarkRequest, object>(request);
+
+            return Ok();
         }
     }
 }

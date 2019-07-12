@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using RequestBusPoc.Application;
-using RequestBusPoc.Data.InMemory;
+using RequestBusPoc.Data.SqlServerDal;
 using RequestBusPoc.Domain;
 using RequestBusPoc.Domain.RequestBusModel;
 
@@ -35,6 +29,9 @@ namespace RequestBusPoc.RestService
             services.AddScoped<RequestBus>();
             services.AddScoped<IBookmarkRepository, BookmarkRepository>();
             services.AddScoped<IRequestHandlerFactory, AutofacRequestHandlerFactory>();
+
+            const string connectionString = @"Server=localhost;Database=RequestBusPoc;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<ELearningContext>(options => options.UseSqlServer(connectionString, x => x.MigrationsAssembly(typeof(BookmarkRepository).Assembly.GetName().Name)));
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
