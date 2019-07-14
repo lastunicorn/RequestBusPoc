@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +34,14 @@ namespace RequestBusPoc.RestService.Bootstrap
 
             const string connectionString = @"Server=localhost;Database=RequestBusPoc;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<ELearningContext>(options => options.UseSqlServer(connectionString, x => x.MigrationsAssembly(typeof(BookmarkRepository).Assembly.GetName().Name)));
+
+            services
+                .AddDefaultIdentity<ApplicationUser>()
+                .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddEntityFrameworkStores<ELearningContext>();
+
+            //services.AddIdentityServer()
+            //    .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -54,8 +64,16 @@ namespace RequestBusPoc.RestService.Bootstrap
                 app.UseHsts();
             }
 
+            app.UseAuthentication();
+            //app.UseIdentityServer();
+
             app.UseHttpsRedirection();
             app.UseMvc();
         }
+    }
+
+    public class ApplicationUser : IdentityUser
+    {
+
     }
 }
